@@ -12,8 +12,8 @@ function App() {
     fetch(API_ENDPOINT)
       .then((res) => res.json())
       .then((parsedData) => { setData(parsedData); setLoading(false); });
-    console.log(parsedData);
   }, []);
+  console.log(data);
 
   if (loading) return <h1>loading</h1>;
 

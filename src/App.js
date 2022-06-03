@@ -2,7 +2,7 @@ import './App.css';
 
 import React, { useEffect, useState } from 'react';
 
-const API_ENDPOINT = 'https://git.heroku.com/heroku-back-3000.git';
+const API_ENDPOINT = 'https://git.heroku.com/heroku-back-3000.git/users';
 
 function App() {
   const [data, setData] = useState([]);
@@ -12,6 +12,7 @@ function App() {
     fetch(API_ENDPOINT)
       .then((res) => res.json())
       .then((parsedData) => { setData(parsedData); setLoading(false); });
+    console.log(parsedData);
   }, []);
 
   if (loading) return <h1>loading</h1>;

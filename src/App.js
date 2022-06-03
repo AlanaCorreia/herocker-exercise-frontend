@@ -9,7 +9,9 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(API_ENDPOINT)
+    fetch(API_ENDPOINT, {
+      mode: 'no-cors', // 'cors' by default
+    })
       .then((res) => res.json())
       .then((parsedData) => { setData(parsedData); setLoading(false); });
   }, []);
